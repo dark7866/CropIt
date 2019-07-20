@@ -132,7 +132,7 @@ function ledraw(response) {
         ctx.fillRect(rect2.x, rect2.y , rect2.width, rect2.height);
         ctx.font = "15px Verdana";
         ctx.fillStyle = "black";
-        ctx.fillText("Download", rect.x + rect.height/2, rect.y);
+        ctx.fillText("DOWNLOAD", rect.x + rect.width/6 - 10, rect.height/2 + 5 + rect.y);
         temp_rX = rect.x;
         temp_rY = rect.y;
         temp_rwidth = rect.width;
