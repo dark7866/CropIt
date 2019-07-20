@@ -1,0 +1,24 @@
+{
+  "name": "CropIt",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "manifest_version": 2,
+  "permissions": ["tabs", "<all_urls>"],
+  "web_accessible_resources": [
+        "fix.css"
+    ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action":{
+    "default_icon": "download.png"
+  },
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "css": ["fix.css"],
+    "js": ["jquery-3.4.1.min.js","content.js"]
+  }
+]
+}
