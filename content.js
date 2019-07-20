@@ -133,6 +133,7 @@ function ledraw(response) {
         ctx.font = "15px Verdana";
         ctx.fillStyle = "black";
         ctx.fillText("DOWNLOAD", rect.x + rect.width/6 - 10, rect.height/2 + 5 + rect.y);
+        ctx.fillText("CANCEL", rect2.x + rect2.width/6 + 5, rect2.height/2 + 5 + rect2.y);
         temp_rX = rect.x;
         temp_rY = rect.y;
         temp_rwidth = rect.width;
