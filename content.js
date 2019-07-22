@@ -65,10 +65,25 @@ function ledraw(response) {
       ctx.fillRect(0, toY, canvas.width, canvas.height);
     }
       else if (toX < startX && toY < startY){
+      console.log(startX-toX)
       sX = toX
       sY = toY
       mX = startX
       mY = startY
+      console.log(sX, sY, mX, mY)
+      ctx.fillRect(0, 0, canvas.width, sY);
+      ctx.fillRect(0, sY, sX, mY - sY);
+      ctx.fillRect(mX, sY, canvas.width, mY - sY);
+      ctx.fillRect(0, mY, canvas.width, canvas.height);
+
+    }
+      else if (toX < startX && toY > startY){
+      console.log(startX-toX)
+      sX = startX - (startX - toX)
+      sY = toY - (toY - startY)
+      mX = toX + (startX - toX)
+      mY = startY + (toY - startY)
+      console.log(sX, sY, mX, mY)
       ctx.fillRect(0, 0, canvas.width, sY);
       ctx.fillRect(0, sY, sX, mY - sY);
       ctx.fillRect(mX, sY, canvas.width, mY - sY);
@@ -127,7 +142,16 @@ function ledraw(response) {
         temp_startY = startY
         temp_mouseX = mouseX
         temp_mouseY = mouseY
+        // Differct startX/Y when dragging
         ctx.fillStyle = "white";
+        if (startX > mouseX && startY > mouseY)
+        {
+          rect.x = startX - 110
+          rect.y = startY + 10
+          rect2.x = startX - 240
+          rect2.y = startY + 10
+
+        }
         ctx.fillRect(rect.x, rect.y , rect.width, rect.height);
         ctx.fillRect(rect2.x, rect2.y , rect2.width, rect2.height);
         ctx.font = "15px Verdana";
