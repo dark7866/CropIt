@@ -65,12 +65,10 @@ function ledraw(response) {
       ctx.fillRect(0, toY, canvas.width, canvas.height);
     }
       else if (toX < startX && toY < startY){
-      console.log(startX-toX)
       sX = toX
       sY = toY
       mX = startX
       mY = startY
-      console.log(sX, sY, mX, mY)
       ctx.fillRect(0, 0, canvas.width, sY);
       ctx.fillRect(0, sY, sX, mY - sY);
       ctx.fillRect(mX, sY, canvas.width, mY - sY);
@@ -78,17 +76,25 @@ function ledraw(response) {
 
     }
       else if (toX < startX && toY > startY){
-      console.log(startX-toX)
       sX = startX - (startX - toX)
       sY = toY - (toY - startY)
       mX = toX + (startX - toX)
       mY = startY + (toY - startY)
-      console.log(sX, sY, mX, mY)
       ctx.fillRect(0, 0, canvas.width, sY);
       ctx.fillRect(0, sY, sX, mY - sY);
       ctx.fillRect(mX, sY, canvas.width, mY - sY);
       ctx.fillRect(0, mY, canvas.width, canvas.height);
 
+    }
+    else if (toX > startX && toY < startY){
+    sX = toX - (toX - startX)
+    sY = startY - (startY - toY)
+    mX = startX + (toX - startX)
+    mY = toY + (startY - toY)
+    ctx.fillRect(0, 0, canvas.width, sY);
+    ctx.fillRect(0, sY, sX, mY - sY);
+    ctx.fillRect(mX, sY, canvas.width, mY - sY);
+    ctx.fillRect(0, mY, canvas.width, canvas.height);
     }
   }
 }
