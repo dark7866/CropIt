@@ -158,6 +158,22 @@ function ledraw(response) {
           rect2.y = startY + 10
 
         }
+        else if (startX < mouseX && startY > mouseY)
+        {
+          rect.x = startX + (mouseX - startX) - 110
+          rect.y = mouseY + (startY - mouseY) + 10
+          rect2.x = startX + (mouseX - startX) - 240
+          rect2.y = mouseY + (startY - mouseY) + 10
+
+        }
+        else if (startX > mouseX && startY < mouseY)
+        {
+          rect.x = mouseX + (startX - mouseX) - 110
+          rect.y = startY + (mouseY - startY) + 10
+          rect2.x = mouseX + (startX - mouseX) - 240
+          rect2.y = startY + (mouseY - startY) + 10
+
+        }
         ctx.fillRect(rect.x, rect.y , rect.width, rect.height);
         ctx.fillRect(rect2.x, rect2.y , rect2.width, rect2.height);
         ctx.font = "15px Verdana";
