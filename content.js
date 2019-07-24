@@ -6,7 +6,6 @@ function saveAs(uri, filename) {
     link.href = uri;
     link.download = filename;
 
-        //Firefox requires the link to be in the body
     document.body.appendChild(link);
 
         //simulate click
@@ -28,7 +27,6 @@ chrome.runtime.sendMessage({msg: "capture"}, function(response) {
   ledraw(response);
 
 });
-
 
 function ledraw(response) {
     //Get a 2d context
@@ -144,6 +142,7 @@ function ledraw(response) {
 
       if (mouseDrag && downLi) {
         drawRect(mouseX, mouseY, ctx);
+
         temp_startX = startX
         temp_startY = startY
         temp_mouseX = mouseX
